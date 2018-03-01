@@ -190,14 +190,14 @@ exports.getWechatJsapiSign = function (req, res) {
 };
 
 function getWechatJsapiSign (req, callback) {
-  var noncestr = req.query.noncestr;
-  var timestamp = req.query.timestamp;
+  var noncestr = req.query.noncest || Math.random().toString(36).substr(2);;
+  var timestamp = req.query.timestamp || new Date().getTime();
   var url = decodeURI(req.query.url).replace(/%26/g, '&');
 
   getWechatJsapiTicket(req, function(err, ticket) {
     var t = sign(ticket, url, noncestr, timestamp);
-
-    callback(null, t.signature);
+    callback(null, t);
+    //callback(null, t.signature);
   });
 }
 
