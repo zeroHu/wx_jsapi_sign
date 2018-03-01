@@ -30,4 +30,13 @@ http://localhost:3000/api/getWechatJsapiSign/
 参数：
  * `noncestr` 必须参数，使用者自己生成的一个随机字符串，签名用的noncestr必须与wx.config中的nonceStr相同
  * `timestamp` 必须参数，使用者在调用微信 JS API 时的Unix时间戳，签名用的timestamp必须与wx.config中的timestamp相同
- * `url` 必须参数，签名用的url必须是调用JS接口页面的完整URL，其中的特殊字符，例如&、空格必须转义为%26、%20，参考：http://www.w3school.com.cn/tags/html_ref_urlencode.html
+ * `url` 必须参数，签名用的url必须是调用JS接口页面的完整URL，其中的特殊字符，例如&、空格必须转义为%26、%20，参考：http://www.w3school.com.cn/tags/html_ref_urlencode.htmlu
+ 
+-----
+致谢：感谢开源~ 看完这个搞清楚了微信分享的那段经历。。。
+-----
+## 对比fork之前的项目修改的内容
+1. wechat.js 里添加了noncestr，timestamp 随机值， getWechatJsapiSign接口返回的数据全部返回，可以直接用于wx.config 使用
+2. 增加checkSignature.js 是用于接口配置信息 校验token 和 url
+3. 增加doc/wechatShare.html 添加前端微信分享的例子
+-----
