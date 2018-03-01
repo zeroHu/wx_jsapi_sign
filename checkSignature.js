@@ -11,7 +11,7 @@ const crypto = require('crypto');
 // Web 服务器端口
 const port = 3020;
 // 微信公众平台服务器配置中的 Token
-const token = 'thisisthejszeroyhcntokenonly';
+const token = 'xxxxxxxxxxxtoken';
 /**
  *  对字符串进行sha1加密
  * @param  {string} str 需要加密的字符串
